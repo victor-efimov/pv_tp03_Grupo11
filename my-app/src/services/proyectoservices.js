@@ -11,9 +11,13 @@ const proyectos = [
 const mostrarProyectos = () => {
     return [...proyectos];
 };
-
+const buscarProyecto = (texto) => {
+    return proyectos.filter(p => p.titulo.toLowerCase().includes(texto.toLowerCase()));
+};
 return {
-    mostrarProyectos
+    mostrarProyectos,
+    buscarProyecto
+
 };
 
 })();
