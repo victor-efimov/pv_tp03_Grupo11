@@ -1,29 +1,63 @@
-//funcion autoejecutable
 const proyectoService = (() => {
+
 const proyectos = [
-    { id: 1, titulo: "Sitio web",               categoria: "Web",       estado: true  },
-    { id: 2, titulo: "App de tareas",           categoria: "Mobile",    estado: false   },
-    { id: 3, titulo: "Gestor de proyectos",     categoria: "Web",       estado: true  },
-    { id: 4, titulo: "Tienda online",           categoria: "Comercial", estado: true },
-    { id: 5, titulo: "Blog educativo",          categoria: "Web",       estado: false   },
+
+{
+id: 1,
+titulo: "Sitio web",
+categoria: "Marketing",
+estado: "Activo"
+},
+
+{
+id: 2,
+titulo: "App de tareas",
+categoria: "Productividad",
+estado: "Pendiente"
+},
+
+{
+id: 3,
+titulo: "Gestor de proyectos",
+categoria: "Gestión",
+estado: "Activo"
+},
+
+{
+id: 4,
+titulo: "Tienda online",
+categoria: "Comercio",
+estado: "Finalizado"
+},
+
+{
+id: 5,
+titulo: "Blog educativo",
+categoria: "Educación",
+estado: "Activo"
+}
+
 ];
 
-const mostrarProyectos = () => {
-    return [...proyectos];
+const obtenerProyectos = () => {
+
+return [...proyectos];
+
 };
-const buscarProyecto = (texto) => {
-    return proyectos.filter(p => p.titulo.toLowerCase().includes(texto.toLowerCase()));
+
+const eliminarProyecto = (id) => {
+
+return proyectos.filter((proyecto) => proyecto.id !== id);
+
 };
+
 return {
-    mostrarProyectos,
-    buscarProyecto
+
+obtenerProyectos,
+eliminarProyecto
 
 };
 
 })();
+
 export default proyectoService;
-
-// funcion flecha para obtener proyectos
-const obtenerProyectos = () => [...proyectos];
-return {obtenerProyectos};
-
