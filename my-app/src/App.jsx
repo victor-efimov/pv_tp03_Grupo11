@@ -1,7 +1,13 @@
 import Listaproyectos from './components/Listaproyectos.jsx'
+import BarraNavegacion from './components/BarraNavegacion.jsx';
 
 function App() {
-  return <Listaproyectos />
+  return (
+  <div>
+    <BarraNavegacion />
+    <Listaproyectos />
+  </div>
+  );
 }
 
 export default App;
