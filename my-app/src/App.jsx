@@ -6,8 +6,8 @@ function App() {
   return (
   <div>
     <BarraNavegacion />
-    <Listaproyectos />
     <Header />
+    <Listaproyectos />
   </div>
   );
 }
