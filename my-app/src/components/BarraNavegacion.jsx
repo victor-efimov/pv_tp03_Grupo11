@@ -4,8 +4,10 @@ const BarraNavegacion = () => {
         <nav style={{ background: '#333', padding: '10px', marginBottom: '20px' }}>
             <ul style={{ display: 'flex', gap: '15px', listStyle: 'none', color: 'white' }}>
                 <li><a href="#" style={{ color: 'white' }}>inicio</a></li>
-                <li><a href="#" style={{ color: 'white' }}>proyectos</a></li>
-                <li><a href="#" style={{ color: 'white' }}>contacto</a></li>
+                <li><a href="#" style={{ color: 'white' }}>Detalle</a></li>
+                <li><a href="#" style={{ color: 'white' }}>Proyectos</a></li>
+                <li><a href="#" style={{ color: 'white' }}>Consejos</a></li>
+                <li><a href="#" style={{ color: 'white' }}>Perfil</a></li>
             </ul>
         </nav>
     );
