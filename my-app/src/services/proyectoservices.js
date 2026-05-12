@@ -45,6 +45,14 @@ return [...proyectos];
 
 };
 
+const agregarProyecto = (proyecto) => {
+    
+    const nuevoProyecto = {...proyecto, id:Date.now()};
+    proyectos.push(nuevoProyecto);
+    return [...proyectos];
+
+};
+
 const eliminarProyecto = (id) => {
 
 return proyectos.filter((proyecto) => proyecto.id !== id);
@@ -54,6 +62,7 @@ return proyectos.filter((proyecto) => proyecto.id !== id);
 return {
 
 obtenerProyectos,
+agregarProyecto,
 eliminarProyecto
 
 };
