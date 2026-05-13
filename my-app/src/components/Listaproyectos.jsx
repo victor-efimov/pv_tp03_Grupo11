@@ -76,7 +76,8 @@ const handleAgregar = () => {
                 />
                 Activo
             </label>
-             <button onClick={handleAgregar}>
+
+            <button onClick={handleAgregar}>
                 Agregar Proyecto
             </button>
         </div>
