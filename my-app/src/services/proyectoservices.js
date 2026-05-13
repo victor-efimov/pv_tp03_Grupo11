@@ -49,15 +49,14 @@ const buscarProyecto = (texto) => {
 };
 //agregar
 const agregarProyecto = (proyecto) => {
-    
-    const nuevoProyecto = {...proyecto, id:Date.now()};
+    const maxId = proyectos.length > 0 ? Math.max(...proyectos.map(p => p.id)) : 0;
+    const nuevoProyecto = {...proyecto, id: maxId + 1};
     proyectos.push(nuevoProyecto);
     return [...proyectos];
-
 };
 //eliminar
 const eliminarProyecto = (id) => {
-return proyectos.filter((proyecto) => proyecto.id !== id);
+    return proyectos.filter((proyecto) => proyecto.id !== id);
 };
 
 return {
@@ -65,7 +64,7 @@ return {
 obtenerProyectos,
 agregarProyecto,
 eliminarProyecto,
-agregarProyecto
+buscarProyecto
 };
 
 })();
