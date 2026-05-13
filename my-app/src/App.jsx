@@ -7,9 +7,9 @@ function App() {
   return (
   <div>
     <BarraNavegacion />
-    <Listaproyectos />
     <Header />
-    <Footer />
+    <Listaproyectos />
+    <Footer/>
   </div>
   );
 }
