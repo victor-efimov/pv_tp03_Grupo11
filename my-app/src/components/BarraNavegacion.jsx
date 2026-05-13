@@ -1,13 +1,15 @@
 import React from 'react';
+import '../css/BarraNavegacion.css';
+
 const BarraNavegacion = () => {
     return (
-        <nav style={{ background: '#333', padding: '10px', marginBottom: '20px' }}>
-            <ul style={{ display: 'flex', gap: '15px', listStyle: 'none', color: 'white' }}>
-                <li><a href="#" style={{ color: 'white' }}>inicio</a></li>
-                <li><a href="#" style={{ color: 'white' }}>Detalle</a></li>
-                <li><a href="#" style={{ color: 'white' }}>Proyectos</a></li>
-                <li><a href="#" style={{ color: 'white' }}>Consejos</a></li>
-                <li><a href="#" style={{ color: 'white' }}>Perfil</a></li>
+        <nav>
+            <ul class="nav">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Detalle</a></li>
+                <li><a href="#">Proyectos</a></li>
+                <li><a href="#">Consejos</a></li>
+                <li><a href="#">Perfil</a></li>
             </ul>
         </nav>
     );

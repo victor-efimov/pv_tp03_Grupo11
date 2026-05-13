@@ -9,10 +9,7 @@ function App() {
     <BarraNavegacion />
     <Header />
     <Listaproyectos />
-<<<<<<< LucianaCardozo
-    <Footer/>
-=======
->>>>>>> main
+    <Footer />
   </div>
   );
 }

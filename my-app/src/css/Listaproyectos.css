@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+main {
+    margin: 55px;
+    font-family: 'Manrope', sans-serif;
+}
+
+.carta {
+    flex: 1;
+    background: white;
+    border: 0.5px solid rgba(0,0,0,0.12);
+    border-left: 3px solid #929091;
+    border-radius: 0 12px 12px 0;
+    padding: 1.1rem 1.25rem 1rem;
+    position: relative;
+    width: 100%;
+}
+
+.carta:hover {
+    border-left: 3px solid #4F46E5;
+    box-shadow: 0 4px 6px #918f8f;
+    cursor: pointer;
+}
+
+.cartagrande {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    background: white;
+    border: 0.5px solid rgba(0,0,0,0.12);
+    border-left: 3px solid #929091;
+    border-radius: 0 12px 12px 0;
+    padding: 1.15rem 1.25rem;
+    transition: border-left 0.2s ease, box-shadow 0.2s ease;
+    color: black;
+}
+
+.cartagrande:hover {
+    cursor: pointer;
+    border-left: 3px solid #4F46E5;
+    box-shadow: 0 4px 6px #918f8f;
+}
+
+.cartagrande h4 {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+    color: black;
+}
+
+.cartagrande p {
+    margin: 0.2rem 0;
+    color: #4b5563;
+}
+.caartagrande button:hover
+{
+    background-color: #3730a3;
+}
+.cartaencabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bienvenida {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 1.5rem;
+}
+.bienvenida h3 {
+    color: black;
+}
+
+.novedades {
+    background: white;
+    border: 0.5px solid rgba(0,0,0,0.12);
+    border-left: 3px solid #929091;
+    border-radius: 0 12px 12px 0;
+    padding: 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem auto;
+    max-width: 500px;
+    color: black;
+}
+
+.novedades:hover {
+    border-left: 3px solid #4F46E5;
+    box-shadow: 0 4px 6px #C9C6C7;
+    cursor: pointer;
+}
+
+.novedades input[type="text"] {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 8px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.9rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.novedades button {
+    background-color: #4F46E5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.novedades button:hover {
+    background-color: #3730a3;
+}
+
+.carta button {
+    background-color: #4F46E5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.4rem 0.9rem;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+.carta button:hover {
+    background-color: #3730a3;
+}
