@@ -2,7 +2,7 @@
 
 ## Integrantes del Grupo:
 - **Azamor Nicolas** -> Desarrollo del Navbar de la pagina y función de búsqueda de proyectos (buscarProyecto())
-- **Luciana Cardozo** -> Desarrollo del footer de la pagina y función de agregado de proyectos (agregarProyecto())
+- **Cardozo Luciana** -> Desarrollo del footer de la pagina y función de agregado de proyectos (agregarProyecto())
 - **Efimov Victor** -> Desarrollo de la lista de proyectos de la pagina, arreglo  y función de mostrar proyectos (obtenerProyecto())
 - **Ricci Octavio** -> Desarrollo del Header de la pagina y función de eliminar proyectos (eliminarProyecto())
 
