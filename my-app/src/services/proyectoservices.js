@@ -47,6 +47,14 @@ return [...proyectos];
 const buscarProyecto = (texto) => {
     return proyectos.filter(p => p.titulo.toLowerCase().includes(texto.toLowerCase()));
 };
+//agregar
+const agregarProyecto = (proyecto) => {
+    
+    const nuevoProyecto = {...proyecto, id:Date.now()};
+    proyectos.push(nuevoProyecto);
+    return [...proyectos];
+
+};
 //eliminar
 const eliminarProyecto = (id) => {
 return proyectos.filter((proyecto) => proyecto.id !== id);
@@ -55,9 +63,9 @@ return proyectos.filter((proyecto) => proyecto.id !== id);
 return {
 
 obtenerProyectos,
+agregarProyecto,
 eliminarProyecto,
-buscarProyecto
-
+agregarProyecto
 };
 
 })();

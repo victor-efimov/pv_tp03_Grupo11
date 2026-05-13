@@ -14,6 +14,27 @@ const handleBuscar = () => {
         const proyectosEncontrados = proyectoService.obtenerProyectos().filter((proyecto) => String(proyecto.id) === texto || proyecto.titulo.toLowerCase().includes(texto));
         setProyectos(proyectosEncontrados);
 };
+const [nuevoProyecto, setNuevoProyecto] = useState({
+   titulo: "",
+   categoria: ""
+});
+
+const manejarCambio = (e) => {
+    const {name, value, type, checked} = e.target;
+    setNuevoProyecto({
+        ...nuevoProyecto,
+        [name]: type === 'checkbox' ? checked : value
+    });
+};
+
+const handleAgregar = () => {
+    const nuevaLista = proyectoService.agregarProyecto(nuevoProyecto);
+    setProyectos(nuevaLista);
+    setNuevoProyecto({
+        titulo: "",
+        categoria: ""
+    });
+};
 
     return (
         <main>
@@ -36,11 +57,17 @@ const handleBuscar = () => {
         <div>
             <input
                 type="text"
-                placeholder="Título"
+                name="titulo"
+                placeholder="Titulo"
+                value={nuevoProyecto.titulo}
+                onChange={manejarCambio}
             />
             <input
                 type="text"
+                name="categoria"
                 placeholder="Categoría"
+                value={nuevoProyecto.categoria} 
+                onChange={manejarCambio}
             />
             <p>Estado:</p>
             <label>
@@ -49,9 +76,11 @@ const handleBuscar = () => {
                 />
                 Activo
             </label>
-            <button>Agregar proyecto</button>
-        </div>
 
+            <button onClick={handleAgregar}>
+                Agregar Proyecto
+            </button>
+        </div>
 
         <h3>LISTA DE PROYECTOS</h3>
         <div>
