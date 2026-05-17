@@ -43,20 +43,46 @@ estado: true
 const obtenerProyectos = () => {
 return [...proyectos];
 };
+
 //buscar
 const buscarProyecto = (texto) => {
-    return proyectos.filter(p => p.titulo.toLowerCase().includes(texto.toLowerCase()));
+return proyectos.filter(
+p => p.titulo.toLowerCase().includes(texto.toLowerCase())
+);
 };
+
 //agregar
 const agregarProyecto = (proyecto) => {
-    const maxId = proyectos.length > 0 ? Math.max(...proyectos.map(p => p.id)) : 0;
-    const nuevoProyecto = {...proyecto, id: maxId + 1};
-    proyectos.push(nuevoProyecto);
-    return [...proyectos];
+
+const maxId = proyectos.length > 0
+? Math.max(...proyectos.map(p => p.id))
+: 0;
+
+const nuevoProyecto = {
+...proyecto,
+id: maxId + 1
 };
+
+proyectos.push(nuevoProyecto);
+
+return [...proyectos];
+};
+
 //eliminar
 const eliminarProyecto = (id) => {
-    return proyectos.filter((proyecto) => proyecto.id !== id);
+
+const indice = proyectos.findIndex(
+(proyecto) => proyecto.id === id
+);
+
+if (indice !== -1) {
+
+proyectos.splice(indice, 1);
+
+}
+
+return [...proyectos];
+
 };
 
 return {
@@ -65,6 +91,7 @@ obtenerProyectos,
 agregarProyecto,
 eliminarProyecto,
 buscarProyecto
+
 };
 
 })();

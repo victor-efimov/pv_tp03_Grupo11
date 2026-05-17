@@ -1,5 +1,6 @@
 import { useState } from "react";
 import proyectoService from "../services/proyectoservices.js";
+import ProyectoCard from "./ProyectoCard";
 import '../css/Listaproyectos.css'; 
 
 const Listaproyectos = () => {
@@ -101,14 +102,10 @@ const handleAgregar = () => {
             <h3>LISTA DE PROYECTOS</h3>
             {proyectos.length === 0 ? (<p>No hay proyectos disponibles.</p>) : (
                 proyectos.map((proyecto) => (
-                    <div key={proyecto.id} className="cartagrande">
-                        <h4>{proyecto.titulo}</h4>
-                        <p>ID: {proyecto.id}</p>
-                        <p>Categoría: {proyecto.categoria}</p>
-                        <p>Estado: {proyecto.estado ? "Activo" : "Inactivo"}</p>
-                        <button>Ver detalle</button>
-                        <button onClick={() => handleEliminar(proyecto.id)}>Eliminar</button>
-                    </div>
+                     <ProyectoCard
+                key={proyecto.id}
+                proyecto={proyecto}
+                onEliminar={handleEliminar}/>
                 ))
             )}
         </div>
