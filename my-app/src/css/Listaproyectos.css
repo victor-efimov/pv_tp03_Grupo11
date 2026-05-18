@@ -133,3 +133,26 @@ main {
 .carta button:hover {
     background-color: #3730a3;
 }
+
+.detalle {
+   margin-top: 20px;
+}
+
+.detalle p, h2 {
+   margin-bottom: 10px;
+   color: black;
+}
+
+.detalle button {
+   margin-top: 15px;
+   background-color: #4F46E5;
+   color: white;
+   border: none;
+   padding: 8px 15px;
+   border-radius: 6px;
+   cursor: pointer;
+}
+
+.detalle button:hover {
+    background-color: #3730a3;
+}
