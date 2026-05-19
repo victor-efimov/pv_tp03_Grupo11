@@ -1,18 +1,30 @@
 import { useState } from "react";
 import proyectoService from "../services/proyectoservices.js";
 import ProyectoCard from "./ProyectoCard";
+import DetalleProyecto from "./DetalleProyecto";
 import '../css/Listaproyectos.css'; 
 
 const Listaproyectos = () => {
 
 const [proyectos, setProyectos] = useState(proyectoService.obtenerProyectos());
 const [busqueda, setBusqueda] = useState("");
+const [proyectoSeleccionado, setProyectoSeleccionado] = useState(null);
+
 const handleEliminar = (id) => {
         console.log('Eliminando proyecto con id:', id);
         const nuevaLista = proyectoService.eliminarProyecto(id);
         console.log('Nueva lista:', nuevaLista);
         setProyectos(nuevaLista);
 };
+
+const handleVerDetalle = (proyecto) => {
+   setProyectoSeleccionado(proyecto);
+};
+
+const handleCerrarDetalle = () => {
+   setProyectoSeleccionado(null);
+};
+
 const handleBuscar = (e) => {
         const texto = e.target.value;
         setBusqueda(texto);
@@ -102,11 +114,17 @@ const handleAgregar = () => {
             <h3>LISTA DE PROYECTOS</h3>
             {proyectos.length === 0 ? (<p>No hay proyectos disponibles.</p>) : (
                 proyectos.map((proyecto) => (
-                     <ProyectoCard
+                <ProyectoCard
                 key={proyecto.id}
                 proyecto={proyecto}
-                onEliminar={handleEliminar}/>
+                onEliminar={handleEliminar}
+                onVerDetalle={handleVerDetalle}/>
                 ))
+            )}
+            {proyectoSeleccionado && (
+                <DetalleProyecto 
+                proyecto={proyectoSeleccionado}
+                cerrar={handleCerrarDetalle}/>
             )}
         </div>
 
