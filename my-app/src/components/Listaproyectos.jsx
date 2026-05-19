@@ -34,6 +34,7 @@ const handleBuscar = (e) => {
             setProyectos(proyectoService.buscarProyecto(texto));
         }
     };
+
 const [nuevoProyecto, setNuevoProyecto] = useState({
     titulo: "",
     categoria: "",
@@ -162,21 +163,21 @@ const handleAgregar = () => {
             <input
                 type="text"
                 name="recursoPDF"
-                placeholder="Enlace recurso PDF"
+                placeholder="Enlace PDF"
                 value={nuevoProyecto.recursoPDF}
                 onChange={manejarCambio}
             />
             <input
                 type="text"
                 name="recursoDrive"
-                placeholder="Enlace recurso Drive"
+                placeholder="Enlace Drive"
                 value={nuevoProyecto.recursoDrive}
                 onChange={manejarCambio}
             />
             <input
                 type="text"
                 name="recursoGitHub"
-                placeholder="Enlace repositorio GitHub"
+                placeholder="Enlace GitHub"
                 value={nuevoProyecto.recursoGitHub}
                 onChange={manejarCambio}
             />
