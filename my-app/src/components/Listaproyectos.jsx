@@ -18,11 +18,11 @@ const handleEliminar = (id) => {
 };
 
 const handleVerDetalle = (proyecto) => {
-   setProyectoSeleccionado(proyecto);
+    setProyectoSeleccionado(proyecto);
 };
 
 const handleCerrarDetalle = () => {
-   setProyectoSeleccionado(null);
+    setProyectoSeleccionado(null);
 };
 
 const handleBuscar = (e) => {
@@ -37,7 +37,16 @@ const handleBuscar = (e) => {
 const [nuevoProyecto, setNuevoProyecto] = useState({
     titulo: "",
     categoria: "",
-    estado: false
+    estado: false,
+    descripcion1: "",
+    descripcion2: "",
+    recursoPDF: "",
+    recursoDrive: "",
+    recursoGitHub: "",
+    miembro1Nombre: "",
+    miembro1Rol: "",
+    miembro2Nombre: "",
+    miembro2Rol: ""
 });
 
 const manejarCambio = (e) => {
@@ -49,16 +58,50 @@ const manejarCambio = (e) => {
 };
 
 const handleAgregar = () => {
-    if (nuevoProyecto.titulo.trim() === "" || nuevoProyecto.categoria.trim() === "") {
-        alert("Por favor, completa el título y la categoría.");
+    if (
+        nuevoProyecto.titulo.trim() === "" ||
+        nuevoProyecto.categoria.trim() === "" ||
+        nuevoProyecto.descripcion1.trim() === "" ||
+        nuevoProyecto.descripcion2.trim() === ""
+    ) {
+        alert("Por favor, completa el título, la categoría y al menos dos párrafos de descripción.");
         return;
     }
-    const nuevaLista = proyectoService.agregarProyecto(nuevoProyecto);
+
+    const proyectoAAgregar = {
+        titulo: nuevoProyecto.titulo,
+        categoria: nuevoProyecto.categoria,
+        estado: nuevoProyecto.estado,
+        descripcionExtendida: [
+            nuevoProyecto.descripcion1.trim(),
+            nuevoProyecto.descripcion2.trim()
+        ],
+        recursos: [
+            { tipo: "PDF", url: nuevoProyecto.recursoPDF.trim() },
+            { tipo: "Drive", url: nuevoProyecto.recursoDrive.trim() },
+            { tipo: "GitHub", url: nuevoProyecto.recursoGitHub.trim() }
+        ],
+        equipo: [
+            { nombre: nuevoProyecto.miembro1Nombre.trim(), rol: nuevoProyecto.miembro1Rol.trim() },
+            { nombre: nuevoProyecto.miembro2Nombre.trim(), rol: nuevoProyecto.miembro2Rol.trim() }
+        ]
+    };
+
+    const nuevaLista = proyectoService.agregarProyecto(proyectoAAgregar);
     setProyectos(nuevaLista);
     setNuevoProyecto({
         titulo: "",
         categoria: "",
-        estado: false
+        estado: false,
+        descripcion1: "",
+        descripcion2: "",
+        recursoPDF: "",
+        recursoDrive: "",
+        recursoGitHub: "",
+        miembro1Nombre: "",
+        miembro1Rol: "",
+        miembro2Nombre: "",
+        miembro2Rol: ""
     });
 };
 
@@ -104,6 +147,67 @@ const handleAgregar = () => {
                     Activo
                 </label>
             </div>
+            <textarea
+                name="descripcion1"
+                placeholder="Descripción extendida - párrafo 1"
+                value={nuevoProyecto.descripcion1}
+                onChange={manejarCambio}
+            />
+            <textarea
+                name="descripcion2"
+                placeholder="Descripción extendida - párrafo 2"
+                value={nuevoProyecto.descripcion2}
+                onChange={manejarCambio}
+            />
+            <input
+                type="text"
+                name="recursoPDF"
+                placeholder="Enlace recurso PDF"
+                value={nuevoProyecto.recursoPDF}
+                onChange={manejarCambio}
+            />
+            <input
+                type="text"
+                name="recursoDrive"
+                placeholder="Enlace recurso Drive"
+                value={nuevoProyecto.recursoDrive}
+                onChange={manejarCambio}
+            />
+            <input
+                type="text"
+                name="recursoGitHub"
+                placeholder="Enlace repositorio GitHub"
+                value={nuevoProyecto.recursoGitHub}
+                onChange={manejarCambio}
+            />
+            <input
+                type="text"
+                name="miembro1Nombre"
+                placeholder="Miembro 1 - nombre"
+                value={nuevoProyecto.miembro1Nombre}
+                onChange={manejarCambio}
+            />
+            <input
+                type="text"
+                name="miembro1Rol"
+                placeholder="Miembro 1 - rol"
+                value={nuevoProyecto.miembro1Rol}
+                onChange={manejarCambio}
+            />
+            <input
+                type="text"
+                name="miembro2Nombre"
+                placeholder="Miembro 2 - nombre"
+                value={nuevoProyecto.miembro2Nombre}
+                onChange={manejarCambio}
+            />
+            <input
+                type="text"
+                name="miembro2Rol"
+                placeholder="Miembro 2 - rol"
+                value={nuevoProyecto.miembro2Rol}
+                onChange={manejarCambio}
+            />
 
             <button onClick={handleAgregar}>
                 Agregar Proyecto

@@ -37,6 +37,7 @@ categoria: "Educación",
 estado: true
 }
 
+
 ];
 
 //mostrar
