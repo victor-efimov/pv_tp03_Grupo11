@@ -2,6 +2,7 @@ import { useState } from "react";
 import proyectoService from "../services/proyectoservices.js";
 import ProyectoCard from "./ProyectoCard";
 import DetalleProyecto from "./DetalleProyecto";
+import RegistroActividad from "./RegistroActividad";
 import '../css/Listaproyectos.css'; 
 
 const Listaproyectos = () => {
@@ -9,12 +10,14 @@ const Listaproyectos = () => {
 const [proyectos, setProyectos] = useState(proyectoService.obtenerProyectos());
 const [busqueda, setBusqueda] = useState("");
 const [proyectoSeleccionado, setProyectoSeleccionado] = useState(null);
+const [ultimaModificacion, setUltimaModificacion] = useState(null);
 
 const handleEliminar = (id) => {
         console.log('Eliminando proyecto con id:', id);
         const nuevaLista = proyectoService.eliminarProyecto(id);
         console.log('Nueva lista:', nuevaLista);
         setProyectos(nuevaLista);
+        setUltimaModificacion(new Date());
 };
 
 const handleVerDetalle = (proyecto) => {
@@ -90,6 +93,7 @@ const handleAgregar = () => {
 
     const nuevaLista = proyectoService.agregarProyecto(proyectoAAgregar);
     setProyectos(nuevaLista);
+    setUltimaModificacion(new Date());
     setNuevoProyecto({
         titulo: "",
         categoria: "",
@@ -231,6 +235,7 @@ const handleAgregar = () => {
                 proyecto={proyectoSeleccionado}
                 cerrar={handleCerrarDetalle}/>
             )}
+            <RegistroActividad fechaHora={ultimaModificacion} />
         </div>
 
 
