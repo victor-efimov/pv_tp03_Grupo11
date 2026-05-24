@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import proyectoService from "../services/proyectoservices.js";
 import ProyectoCard from "./ProyectoCard";
 import DetalleProyecto from "./DetalleProyecto";
@@ -11,14 +11,21 @@ const [proyectos, setProyectos] = useState(proyectoService.obtenerProyectos());
 const [busqueda, setBusqueda] = useState("");
 const [proyectoSeleccionado, setProyectoSeleccionado] = useState(null);
 const [ultimaModificacion, setUltimaModificacion] = useState(null);
+const primeraCarga = useRef(true);
+
+useEffect(() => {
+    if (primeraCarga.current) {
+        primeraCarga.current = false;
+        return;}
+    setUltimaModificacion(new Date());
+}, [proyectos]);
 
 const handleEliminar = (id) => {
         console.log('Eliminando proyecto con id:', id);
         const nuevaLista = proyectoService.eliminarProyecto(id);
         console.log('Nueva lista:', nuevaLista);
         setProyectos(nuevaLista);
-        setUltimaModificacion(new Date());
-};
+       };
 
 const handleVerDetalle = (proyecto) => {
     setProyectoSeleccionado(proyecto);
@@ -93,7 +100,6 @@ const handleAgregar = () => {
 
     const nuevaLista = proyectoService.agregarProyecto(proyectoAAgregar);
     setProyectos(nuevaLista);
-    setUltimaModificacion(new Date());
     setNuevoProyecto({
         titulo: "",
         categoria: "",
