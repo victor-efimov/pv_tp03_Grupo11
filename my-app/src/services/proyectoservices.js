@@ -4,7 +4,7 @@ const proyectos = [
 {
         id: 1,
         titulo: "Sitio web",
-        categoria: "Marketing",
+        categoria: "Desarrollo web",
         estado: true,
         descripcionExtendida: [
             "Esta plataforma web corporativa fue planificada para robustecer el posicionamiento digital de la organización. Incorpora módulos avanzados de servicios, un canal directo de soporte y un blog de novedades para fidelizar usuarios.",
@@ -23,7 +23,7 @@ const proyectos = [
     {
         id: 2,
         titulo: "App de tareas",
-        categoria: "Productivity",
+        categoria: "¨Productividad",
         estado: false,
         descripcionExtendida: [
             "Un sistema móvil enfocado en optimizar la gestión del tiempo personal y laboral, el cual facilita la creación de listas de pendientes dinámicas y alarmas programadas.",
