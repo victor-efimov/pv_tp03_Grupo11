@@ -133,3 +133,109 @@ main {
 .carta button:hover {
     background-color: #3730a3;
 }
+
+.detalle {
+   margin-top: 20px;
+   background: white;
+   border: 0.5px solid rgba(0,0,0,0.12);
+   border-left: 3px solid #4F46E5;
+   border-radius: 0 12px 12px 0;
+   padding: 1.5rem;
+   box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
+   display: grid;
+   gap: 1.2rem;
+   max-width: 900px;
+}
+
+.detalle h2,
+.detalle h3 {
+   margin: 0;
+   color: #111827;
+}
+
+.detalle h2 {
+   font-size: 1.8rem;
+}
+
+.detalle h3 {
+   font-size: 1.05rem;
+   margin-bottom: 0.75rem;
+}
+
+.detalle p {
+   margin: 0 0 0.85rem;
+   line-height: 1.75;
+   color: #4b5563;
+}
+
+.detalle section {
+   display: grid;
+   gap: 0.65rem;
+}
+
+.detalle ul {
+   margin: 0;
+   padding-left: 1.2rem;
+   color: #374151;
+}
+
+.detalle li {
+   margin-bottom: 0.55rem;
+   line-height: 1.5;
+}
+
+.detalle a {
+   color: #4F46E5;
+   text-decoration: none;
+   font-weight: 600;
+}
+
+.detalle a:hover {
+   text-decoration: underline;
+}
+
+.registro-actividad {
+    margin-top: 1rem;
+    padding: 1rem 1.25rem;
+    background: #f8fafc;
+    border: 0.5px solid rgba(0,0,0,0.1);
+    border-left: 3px solid #4F46E5;
+    border-radius: 0 12px 12px 0;
+    max-width: 900px;
+}
+
+.registro-actividad__texto {
+    margin: 0;
+    color: #1f2937;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.detalle .detalle-meta {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 0.8rem;
+   color: #6b7280;
+   font-size: 0.95rem;
+}
+
+.detalle .detalle-meta span {
+   background: #eef2ff;
+   color: #3730a3;
+   border-radius: 999px;
+   padding: 0.3rem 0.8rem;
+}
+
+.detalle button {
+   margin-top: 15px;
+   background-color: #4F46E5;
+   color: white;
+   border: none;
+   padding: 10px 18px;
+   border-radius: 8px;
+   cursor: pointer;
+}
+
+.detalle button:hover {
+    background-color: #3730a3;
+}

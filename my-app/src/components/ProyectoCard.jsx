@@ -1,4 +1,4 @@
-const ProyectoCard = ({ proyecto, onEliminar }) => {
+const ProyectoCard = ({ proyecto, onEliminar, onVerDetalle }) => {
 
 const { id, titulo, categoria, estado } = proyecto;
 return (
@@ -9,7 +9,9 @@ return (
 <p>{estado}</p>
 </div>
 <div className="carta3">
-<button>Ver detalle</button>
+<button onClick={() => onVerDetalle(proyecto)}>
+Ver detalle
+</button>
 <button onClick={() => onEliminar(id)}>
 Eliminar
 </button>
