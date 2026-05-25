@@ -16,10 +16,10 @@ const primeraCarga = useRef(true);
 useEffect(() => {
     if (primeraCarga.current) {
         primeraCarga.current = false;
-        return;}
+        return;
+    }
     setUltimaModificacion(new Date());
 }, [proyectos]);
-
 const handleEliminar = (id) => {
         console.log('Eliminando proyecto con id:', id);
         const nuevaLista = proyectoService.eliminarProyecto(id);
@@ -36,14 +36,12 @@ const handleCerrarDetalle = () => {
 };
 
 const handleBuscar = (e) => {
-        const texto = e.target.value;
-        setBusqueda(texto);
-        if (texto.trim() === "") {
-            setProyectos(proyectoService.obtenerProyectos());
-        } else {
-            setProyectos(proyectoService.buscarProyecto(texto));
-        }
+        setBusqueda(e.target.value);
     };
+
+const proyectosFiltrados = proyectos.filter(proyecto => 
+    proyecto.titulo.toLowerCase().includes(busqueda.toLowerCase())
+);
 
 const [nuevoProyecto, setNuevoProyecto] = useState({
     titulo: "",
@@ -227,8 +225,8 @@ const handleAgregar = () => {
 
         <div className="bienvenida">
             <h3>LISTA DE PROYECTOS</h3>
-            {proyectos.length === 0 ? (<p>No hay proyectos disponibles.</p>) : (
-                proyectos.map((proyecto) => (
+            {proyectosFiltrados.length === 0 ? (<p>No hay proyectos disponibles.</p>) : (
+                proyectosFiltrados.map((proyecto) => (
                 <ProyectoCard
                 key={proyecto.id}
                 proyecto={proyecto}
@@ -241,8 +239,10 @@ const handleAgregar = () => {
                 proyecto={proyectoSeleccionado}
                 cerrar={handleCerrarDetalle}/>
             )}
-            <RegistroActividad fechaHora={ultimaModificacion} />
-        </div>
+           {ultimaModificacion && (
+        <RegistroActividad fechaHora={ultimaModificacion} />
+    )}
+</div>
 
 
     </main>
