@@ -4,7 +4,7 @@ import '../css/BarraNavegacion.css';
 const BarraNavegacion = () => {
     return (
         <nav>
-            <ul class="nav">
+            <ul className="nav">
                 <li><a href="#">Inicio</a></li>
                 <li><a href="#">Detalle</a></li>
                 <li><a href="#">Proyectos</a></li>
