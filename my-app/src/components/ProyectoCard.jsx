@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const ProyectoCard = ({ proyecto, onEliminar, onVerDetalle }) => {
 
 const { id, titulo, categoria, estado } = proyecto;
@@ -9,11 +10,11 @@ return (
 <p>{estado}</p>
 </div>
 <div className="carta3">
-<button onClick={() => onVerDetalle(proyecto)}>
-Ver detalle
-</button>
+<Link to={`/proyectos/${id}`}>
+  Ver detalle
+</Link>
 <button onClick={() => onEliminar(id)}>
-Eliminar
+  Eliminar
 </button>
 
 </div>

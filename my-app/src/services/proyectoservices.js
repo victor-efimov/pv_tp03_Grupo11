@@ -103,6 +103,13 @@ const obtenerProyectos = () => {
 return [...proyectos];
 };
 
+const obtenerProyectoPorId = (id) => {
+return proyectos.find(
+(proyecto) => proyecto.id === Number(id)
+);
+
+};
+
 //buscar
 const buscarProyecto = (texto) => {
 return proyectos.filter(
@@ -147,6 +154,7 @@ return [...proyectos];
 return {
 
 obtenerProyectos,
+obtenerProyectoPorId,
 agregarProyecto,
 eliminarProyecto,
 buscarProyecto

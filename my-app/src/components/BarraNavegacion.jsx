@@ -1,15 +1,16 @@
 import React from 'react';
+import { NavLink } from "react-router-dom";
 import '../css/BarraNavegacion.css';
 
 const BarraNavegacion = () => {
     return (
         <nav>
             <ul className="nav">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Detalle</a></li>
-                <li><a href="#">Proyectos</a></li>
-                <li><a href="#">Consejos</a></li>
-                <li><a href="#">Perfil</a></li>
+                <li><NavLink href="#">Inicio</NavLink></li>
+                <li><NavLink href="#">Detalle</NavLink></li>
+                <li><NavLink href="#">Proyectos</NavLink></li>
+                <li><NavLink href="#">Consejos</NavLink></li>
+                <li><NavLink href="#">Perfil</NavLink></li>
             </ul>
         </nav>
     );
