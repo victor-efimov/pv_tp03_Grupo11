@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import proyectoService from "../services/proyectoservices.js";
 import ProyectoCard from "./ProyectoCard";
-import DetalleProyecto from "./DetalleProyecto";
 import RegistroActividad from "./RegistroActividad";
 import FormularioProyecto from "./FormularioProyecto.jsx";
 import '../css/Listaproyectos.css'; 
@@ -10,7 +9,6 @@ const Listaproyectos = () => {
 
 const [proyectos, setProyectos] = useState(proyectoService.obtenerProyectos());
 const [busqueda, setBusqueda] = useState("");
-const [proyectoSeleccionado, setProyectoSeleccionado] = useState(null);
 const [ultimaModificacion, setUltimaModificacion] = useState(null);
 const primeraCarga = useRef(true);
 
@@ -36,13 +34,6 @@ const handleEliminar = (id) => {
         setProyectos(nuevaLista);
        };
 
-const handleVerDetalle = (proyecto) => {
-    setProyectoSeleccionado(proyecto);
-};
-
-const handleCerrarDetalle = () => {
-    setProyectoSeleccionado(null);
-};
 
 const handleBuscar = (e) => {
         setBusqueda(e.target.value);
@@ -73,15 +64,10 @@ const proyectosFiltrados = proyectos.filter(proyecto =>
                 <ProyectoCard
                 key={proyecto.id}
                 proyecto={proyecto}
-                onEliminar={handleEliminar}
-                onVerDetalle={handleVerDetalle}/>
+                onEliminar={handleEliminar}/>
                 ))
             )}
-            {proyectoSeleccionado && (
-                <DetalleProyecto 
-                proyecto={proyectoSeleccionado}
-                cerrar={handleCerrarDetalle}/>
-            )}
+    
            {ultimaModificacion && (
         <RegistroActividad fechaHora={ultimaModificacion} />
         )}
