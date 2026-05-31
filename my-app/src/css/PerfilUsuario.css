@@ -1,0 +1,22 @@
+.profile-grid {
+  margin-top: 12px;
+}
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+}
+.profile-media {
+  height: 180px;
+  object-fit: cover;
+}
+.profile-card .MuiCardContent-root {
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .profile-media {
+    height: 160px;
+  }
+}
