@@ -1,6 +1,6 @@
 import { useRoutes } from "react-router-dom";
 
-import routes from './routes/routes';
+import routes from './routes/routes.jsx';
 import BarraNavegacion from './components/BarraNavegacion.jsx';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
