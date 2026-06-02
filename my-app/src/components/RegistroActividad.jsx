@@ -1,3 +1,5 @@
+import Alert from "@mui/material/Alert";
+
 const RegistroActividad = ({ fechaHora }) => {
     const fecha = fechaHora ? (fechaHora instanceof Date ? fechaHora : new Date(fechaHora)) : null;
 
@@ -6,13 +8,11 @@ const RegistroActividad = ({ fechaHora }) => {
         : null;
 
     return (
-        <div className="registro-actividad">
-            <p className="registro-actividad__texto">
-                {fechaFormateada
-                    ? fechaFormateada
-                    : "Aún no hay cambios registrados en los proyectos."}
-            </p>
-        </div>
+        <Alert severity="info">
+            {fechaFormateada
+                ? fechaFormateada
+                : "Aún no hay cambios registrados en los proyectos."}
+        </Alert>
     );
 };
 
