@@ -27,7 +27,7 @@ const PerfilUsuario = () => {
       id: 4,
       nombre: "Luciana Cardozo",
       rol: "Alumno",
-      institucion: "APU",
+      institucion: "Facultad de Ingenieria",
       email: "luciana.cardozo@example.com"
     },
     {
@@ -41,7 +41,7 @@ const PerfilUsuario = () => {
 
   return (
     <Container sx={{ py: 4 }}>
-      <Typography variant="h4" component="h1" gutterBottom>
+      <Typography variant="h4" component="h1" gutterBottom sx={{ color: 'black' }}>
         Perfil de Usuario
       </Typography>
       <Typography variant="body1" color="text.secondary" paragraph>

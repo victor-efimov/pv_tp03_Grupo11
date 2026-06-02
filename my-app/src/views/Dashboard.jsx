@@ -17,7 +17,7 @@ const Dashboard = () => {
       </Typography>
 
       <Grid container spacing={3}>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={8}>
           <Card elevation={3}>
             <CardContent>
               <Typography variant="subtitle2" color="text.secondary" gutterBottom>
@@ -33,7 +33,7 @@ const Dashboard = () => {
           </Card>
         </Grid>
 
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={4}>
           <Card elevation={3}>
             <CardContent>
               <Typography variant="subtitle2" color="text.secondary" gutterBottom>
