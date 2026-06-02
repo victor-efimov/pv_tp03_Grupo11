@@ -36,13 +36,6 @@ const PerfilUsuario = () => {
       rol: "Docente",
       institucion: "Escuela de Minas",
       email: "rodolfo.ruiz@example.com"
-    },
-        {
-      id: 6,
-      nombre: "Mercedes Humana",
-      rol: "Docente",
-      institucion: "Escuela de Minas",
-      email: "mercedes.humana@example.com"
     }
   ];
 
