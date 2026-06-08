@@ -5,7 +5,7 @@ const usuarios = [
     rol: "Alumno",
     institucion: "Escuela de Minas",
     email: "octavio.ricci@example.com",
-    dni: "26348791",
+    dni: "48405926",
     contraseña: "Ricci2026!"
   },
   {
