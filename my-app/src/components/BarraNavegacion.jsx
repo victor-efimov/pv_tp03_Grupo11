@@ -6,11 +6,9 @@ const BarraNavegacion = () => {
     return (
         <nav>
             <ul className="nav">
-                <li><NavLink href="#">Inicio</NavLink></li>
-                <li><NavLink href="#">Detalle</NavLink></li>
-                <li><NavLink href="#">Proyectos</NavLink></li>
-                <li><NavLink href="#">Consejos</NavLink></li>
-                <li><NavLink href="#">Perfil</NavLink></li>
+                <li><NavLink to="/dashboard">Inicio</NavLink></li>
+                <li><NavLink to="/proyectos">Proyectos</NavLink></li>
+                <li><NavLink to="/perfil">Perfil</NavLink></li>
             </ul>
         </nav>
     );

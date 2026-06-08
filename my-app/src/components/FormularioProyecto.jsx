@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { TextField, Button, Box, Grid, Checkbox, FormControlLabel, Typography, Card, CardContent} from "@mui/material";
 
 const FormularioProyecto = ({ agregarProyecto }) => {
 const [nuevoProyecto, setNuevoProyecto] = useState({
@@ -72,102 +73,46 @@ const handleAgregar = () => {
 };
 
 return(
-    <div className="novedades">
-        <h3>AGREGAR PROYECTOS</h3>
-        <input
-            type="text"
-            name="titulo"
-            placeholder="Titulo"
-            value={nuevoProyecto.titulo}
-            onChange={manejarCambio}
-        />
-        <input
-            type="text"
-            name="categoria"
-            placeholder="Categoría"
-            value={nuevoProyecto.categoria} 
-            onChange={manejarCambio}
-        />
-        <div className="checkbox-group">
-            <label>
-                <input
-                    type="checkbox"
-                    name="estado"
-                    checked={nuevoProyecto.estado}
-                    onChange={manejarCambio}
-                />
-                Activo
-            </label>
-        </div>
-        <textarea
-            name="descripcion1"
-            placeholder="Descripción extendida - párrafo 1"
-            value={nuevoProyecto.descripcion1}
-            onChange={manejarCambio}
-        />
-        
-        <textarea
-            name="descripcion2"
-            placeholder="Descripción extendida - párrafo 2"                
-            value={nuevoProyecto.descripcion2}
-            onChange={manejarCambio}
-        />
-        <input
-            type="text"                
-            name="recursoPDF"
-            placeholder="Enlace PDF"
-            value={nuevoProyecto.recursoPDF}
-            onChange={manejarCambio}
-        />
-        <input
-            type="text"
-            name="recursoDrive"
-            placeholder="Enlace Drive"
-            value={nuevoProyecto.recursoDrive}
-            onChange={manejarCambio}
-        />
-        <input
-            type="text"
-            name="recursoGitHub"
-            placeholder="Enlace GitHub"
-            value={nuevoProyecto.recursoGitHub}
-            onChange={manejarCambio}
-        />
-        <input
-            type="text"
-            name="miembro1Nombre"
-            placeholder="Miembro 1 - nombre"
-            value={nuevoProyecto.miembro1Nombre}
-            onChange={manejarCambio}
-        />
-        <input
-            type="text"
-            name="miembro1Rol"
-            placeholder="Miembro 1 - rol"
-            value={nuevoProyecto.miembro1Rol}
-            onChange={manejarCambio}
-        />
-        <input
-            type="text"
-            name="miembro2Nombre"
-            placeholder="Miembro 2 - nombre"
-            value={nuevoProyecto.miembro2Nombre}
-            onChange={manejarCambio}
-        />
-        <input
-            type="text"
-            name="miembro2Rol"
-            placeholder="Miembro 2 - rol"
-            value={nuevoProyecto.miembro2Rol}
-            onChange={manejarCambio}
-        />
+    <Box className="novedades" >
+    <Card elevation={0}> 
+        <CardContent sx={{ display: "flex", flexDirection: "column", gap: 1.5 }} >
 
-        <button onClick={handleAgregar}>
+            <h3>AGREGAR PROYECTOS</h3>
+
+            <TextField label="Título" name="titulo" fullWidth value={nuevoProyecto.titulo} onChange={manejarCambio} sx={{ "& .MuiOutlinedInput-root": { borderRadius: "8px"} }} />
+
+            <TextField label="Categoría" name="categoria" fullWidth value={nuevoProyecto.categoria} onChange={manejarCambio} sx={{ "& .MuiOutlinedInput-root": { borderRadius: "8px"} }} />
+
+            <FormControlLabel control={
+                <Checkbox name="estado" checked={nuevoProyecto.estado} onChange={manejarCambio} />} 
+                label="Activo"
+            />
+
+            <TextField label="Descripción 1" name="descripcion1" fullWidth multiline rows={2} value={nuevoProyecto.descripcion1} onChange={manejarCambio} sx={{ "& .MuiOutlinedInput-root": { borderRadius: "8px"} }}/>
+
+            <TextField label="Descripción 2" name="descripcion2" fullWidth multiline rows={2} value={nuevoProyecto.descripcion2} onChange={manejarCambio} sx={{ "& .MuiOutlinedInput-root": { borderRadius: "8px"} }}/>
+
+            <TextField label="PDF" name="recursoPDF" fullWidth value={nuevoProyecto.recursoPDF} onChange={manejarCambio} sx={{ "& .MuiOutlinedInput-root": { borderRadius: "8px"} }}/>
+
+            <TextField label="Drive" name="recursoDrive" fullWidth value={nuevoProyecto.recursoDrive} onChange={manejarCambio} sx={{ "& .MuiOutlinedInput-root": { borderRadius: "8px"} }} />
+
+            <TextField label="GitHub" name="recursoGitHub" fullWidth value={nuevoProyecto.recursoGitHub} onChange={manejarCambio} sx={{ "& .MuiOutlinedInput-root": { borderRadius: "8px"} }}/>
+
+            <TextField label="Miembro 1" name="miembro1Nombre" fullWidth value={nuevoProyecto.miembro1Nombre} onChange={manejarCambio} sx={{ "& .MuiOutlinedInput-root": { borderRadius: "8px"} }}/>
+
+            <TextField label="Rol 1" name="miembro1Rol" fullWidth value={nuevoProyecto.miembro1Rol} onChange={manejarCambio} sx={{ "& .MuiOutlinedInput-root": { borderRadius: "8px"} }} />
+
+            <TextField label="Miembro 2" name="miembro2Nombre" fullWidth value={nuevoProyecto.miembro2Nombre} onChange={manejarCambio} sx={{ "& .MuiOutlinedInput-root": { borderRadius: "8px"} }}/>
+
+            <TextField label="Rol 2" name="miembro2Rol" fullWidth value={nuevoProyecto.miembro2Rol} onChange={manejarCambio} sx={{ "& .MuiOutlinedInput-root": { borderRadius: "8px"} }} />
+
+            <Button variant="contained" fullWidth onClick={handleAgregar} sx={{ bgcolor: "#3f51b5" }}>
             Agregar Proyecto
-        </button>
-    </div>
+            </Button>
 
-);
-};
+        </CardContent>
+        </Card>
+    </Box>
+); };
 
 export default FormularioProyecto;
