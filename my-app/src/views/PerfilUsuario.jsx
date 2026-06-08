@@ -1,50 +1,15 @@
 import { Container, Typography, Grid, Card, CardContent, Avatar, Box } from "@mui/material";
+import usuarioService from "../services/usuarioService";
 
 const PerfilUsuario = () => {
-  const usuarios = [
-    {
-      id: 1,
-      nombre: "Octavio Ricci",
-      rol: "Alumno",
-      institucion: "Escuela de Minas",
-      email: "octavio.ricci@example.com"
-    },
-    {
-      id: 2,
-      nombre: "Victor Efimov",
-      rol: "Alumno",
-      institucion: "Escuela de Minas",
-      email: "victor.efimov@example.com"
-    },
-        {
-      id: 3,
-      nombre: "Nicolas Azamor",
-      rol: "Alumno",
-      institucion: "Escuela de Minas",
-      email: "nicolas.azamor@example.com"
-    },
-    {
-      id: 4,
-      nombre: "Luciana Cardozo",
-      rol: "Alumno",
-      institucion: "Facultad de Ingenieria",
-      email: "luciana.cardozo@example.com"
-    },
-    {
-      id: 5,
-      nombre: "Rodolfo Ruiz",
-      rol: "Docente",
-      institucion: "Escuela de Minas",
-      email: "rodolfo.ruiz@example.com"
-    }
-  ];
+  const usuarios = usuarioService.obtenerUsuarios();
 
   return (
     <Container sx={{ py: 4 }}>
       <Typography variant="h4" component="h1" gutterBottom sx={{ color: 'black' }}>
         Perfil de Usuario
       </Typography>
-      <Typography variant="body1" color="text.secondary" paragraph>
+      <Typography variant="body1" color="text.secondary" component="p">
         Datos simulados de alumnos y docentes organizados de manera clara y accesible.
       </Typography>
 
@@ -69,6 +34,9 @@ const PerfilUsuario = () => {
                 </Typography>
                 <Typography variant="body2" sx={{ mt: 1 }}>
                   Correo: <strong>{usuario.email}</strong>
+                </Typography>
+                <Typography variant="body2" sx={{ mt: 1 }}>
+                  DNI: <strong>{usuario.dni}</strong>
                 </Typography>
               </CardContent>
             </Card>
