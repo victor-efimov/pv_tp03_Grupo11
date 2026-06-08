@@ -3,7 +3,7 @@ import { UsuarioContext } from "../context/UsuarioContext";
 import "../css/Header.css";
 
 const Header = () => {
-  const { usuario } = useContext(UsuarioContext);
+  const { usuario, logout } = useContext(UsuarioContext);
 
   return (
     <header>
@@ -13,8 +13,13 @@ const Header = () => {
       </div>
 
       <div className="usuario-info">
-        <strong>{usuario.nombre}</strong>
-        <p>{usuario.rol}</p>
+        <strong>{usuario ? usuario.nombre : "Invitado"}</strong>
+        <p>{usuario ? usuario.rol : "No autenticado"}</p>
+        {usuario && (
+          <button type="button" className="logout-button" onClick={logout}>
+            Cerrar sesión
+          </button>
+        )}
       </div>
     </header>
   );

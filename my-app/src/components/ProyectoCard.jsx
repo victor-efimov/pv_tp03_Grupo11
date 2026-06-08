@@ -6,7 +6,7 @@ const { id, titulo, categoria, estado } = proyecto;
 return (
   <Card className="carta">
     <CardContent className="carta2">
-       <h3> {titulo} </h3>
+        <h3> {titulo} </h3>
         <p> Categoría: {categoria}</p>
         <p> Estado: {estado ? "Activo" : "Inactivo"}</p>
     </CardContent>

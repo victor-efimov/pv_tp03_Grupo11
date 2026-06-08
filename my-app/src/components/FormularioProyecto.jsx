@@ -73,11 +73,11 @@ const handleAgregar = () => {
 };
 
 return(
-   <Box className="novedades" >
+    <Box className="novedades" >
     <Card elevation={0}> 
         <CardContent sx={{ display: "flex", flexDirection: "column", gap: 1.5 }} >
- 
-          <h3>AGREGAR PROYECTOS</h3>
+
+            <h3>AGREGAR PROYECTOS</h3>
 
             <TextField label="Título" name="titulo" fullWidth value={nuevoProyecto.titulo} onChange={manejarCambio} sx={{ "& .MuiOutlinedInput-root": { borderRadius: "8px"} }} />
 
@@ -99,7 +99,7 @@ return(
             <TextField label="GitHub" name="recursoGitHub" fullWidth value={nuevoProyecto.recursoGitHub} onChange={manejarCambio} sx={{ "& .MuiOutlinedInput-root": { borderRadius: "8px"} }}/>
 
             <TextField label="Miembro 1" name="miembro1Nombre" fullWidth value={nuevoProyecto.miembro1Nombre} onChange={manejarCambio} sx={{ "& .MuiOutlinedInput-root": { borderRadius: "8px"} }}/>
-  
+
             <TextField label="Rol 1" name="miembro1Rol" fullWidth value={nuevoProyecto.miembro1Rol} onChange={manejarCambio} sx={{ "& .MuiOutlinedInput-root": { borderRadius: "8px"} }} />
 
             <TextField label="Miembro 2" name="miembro2Nombre" fullWidth value={nuevoProyecto.miembro2Nombre} onChange={manejarCambio} sx={{ "& .MuiOutlinedInput-root": { borderRadius: "8px"} }}/>
@@ -107,11 +107,11 @@ return(
             <TextField label="Rol 2" name="miembro2Rol" fullWidth value={nuevoProyecto.miembro2Rol} onChange={manejarCambio} sx={{ "& .MuiOutlinedInput-root": { borderRadius: "8px"} }} />
 
             <Button variant="contained" fullWidth onClick={handleAgregar} sx={{ bgcolor: "#3f51b5" }}>
-               Agregar Proyecto
-           </Button>
+            Agregar Proyecto
+            </Button>
 
         </CardContent>
-      </Card>
+        </Card>
     </Box>
 ); };
 

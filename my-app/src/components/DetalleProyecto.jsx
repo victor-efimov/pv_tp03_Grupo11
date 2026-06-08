@@ -30,16 +30,11 @@ const DetalleProyecto = () => {
   return (
     <main className="detalle">
       <p>ID: {id}</p>
-
       <h2>{titulo}</h2>
-
       <p>Categoría: {categoria}</p>
-
       <p>Estado: {estado ? "Activo" : "Inactivo"}</p>
-
       <section>
         <h3>Descripción extendida</h3>
-
         {descripcionExtendida.length > 0 ? (
           descripcionExtendida.map((parrafo, index) => (
             <p key={index}>{parrafo}</p>
@@ -51,7 +46,6 @@ const DetalleProyecto = () => {
 
       <section>
         <h3>Recursos</h3>
-
         {recursos.length > 0 ? (
           <ul>
             {recursos.map((recurso, index) => (
@@ -73,7 +67,6 @@ const DetalleProyecto = () => {
 
       <section>
         <h3>Equipo</h3>
-
         {equipo.length > 0 ? (
           <ul>
             {equipo.map((miembro, index) => (
@@ -86,7 +79,6 @@ const DetalleProyecto = () => {
           <p>No hay información de equipo disponible.</p>
         )}
       </section>
-
       <Link to="/proyectos">
         Volver
       </Link>
